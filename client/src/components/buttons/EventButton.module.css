@@ -1,0 +1,11 @@
+.button {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+.button:hover {
+  background-color: var(--secondary-bg-color);
+  cursor: pointer;
+}

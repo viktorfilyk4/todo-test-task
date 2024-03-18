@@ -1,0 +1,24 @@
+.container {
+  padding: 40px 20px;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.description {
+  margin: 10px 0 40px 0;
+}
+
+.descriptionContainer {
+  flex: 0 1 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.listsContainer {
+  flex: 1 1 auto;
+
+  display: flex;
+  column-gap: 10px;
+}

@@ -1,0 +1,50 @@
+version: "3"
+
+# TODO: add bind volumes for local development
+
+services:
+  todo-app-gui:
+    image: todo-app-gui-dev
+    container_name: todo-app-gui
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    ports:
+      - 9500:9500
+    depends_on:
+      - todo-app
+
+  todo-app:
+    image: todo-app-dev
+    container_name: todo-app
+    env_file:
+      - path: ./server/.env.development
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    depends_on:
+      - todo-postgres
+
+  todo-adminer:
+    image: adminer
+    container_name: todo-db-gui
+    ports:
+      - 8080:8080
+    depends_on:
+      - todo-postgres
+      
+  todo-postgres:
+    image: postgres:15.6
+    container_name: todo-db
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - .env.database.development
+    volumes:
+      - todo-db-data:/var/lib/postgresql/data
+
+volumes:
+  todo-db-data:

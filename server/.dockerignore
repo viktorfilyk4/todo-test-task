@@ -1,0 +1,10 @@
+# folders
+dist
+node_modules
+
+# files
+.dockerignore
+.gitignore
+.DS_Store
+Dockerfile.dev
+README.md
