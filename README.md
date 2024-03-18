@@ -6,6 +6,7 @@
 - Postgres database
 - Adminer GUI for database
 - Backend (Nest.js / Typescript)
+  - TypeORM
   - Auto seeding `State` table in database during first running of container
 - Frontend (React.js / Typescript)
   - Webpack (custom build)
