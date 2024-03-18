@@ -24,3 +24,7 @@
 
 ### To stop the app
 In root directory run: `docker compose -f docker-compose.dev.yml down`
+
+
+## UI
+Inspired with Trello and this [Figma template](https://www.figma.com/file/qn3ALd8L1ghVuXEeYFXm1N/Frello---Your-Trello-Board-in-Figma-(Community)) :)
