@@ -14,13 +14,14 @@
 
 ## Local development
 ### Prerequisites
-- Docker
-- Docker Compose
+- Docker (used `v25.0.2` on MacOS)
+- Docker Compose (used `v2.24.3` on MacOS)
 
 ### To run the app
-1. `cd` to root directory (where `server` and `client` folders allocated)
-2. Run command: `docker compose -f docker-compose.dev.yml up -d`
-3. Open `http://localhost:9500/` in browser
+1. Rename `.env.sample` to `.env` in root directory 
+2. `cd` to root directory (where `server` and `client` folders allocated)
+3. Run command: `docker compose -f docker-compose.dev.yml up -d`
+4. Open `http://localhost:9500/` in browser
 
 ### To stop the app
 In root directory run: `docker compose -f docker-compose.dev.yml down`
