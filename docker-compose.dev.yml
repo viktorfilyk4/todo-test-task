@@ -17,8 +17,13 @@ services:
   todo-app:
     image: todo-app-dev
     container_name: todo-app
-    env_file:
-      - path: ./server/.env.development
+    environment:
+      - DB_HOST
+      - DB_PORT
+      - DB_USER
+      - DB_PASSWORD
+      - DB_NAME
+      - DB_LOG_QUERIES
     build:
       context: ./server
       dockerfile: Dockerfile.dev
@@ -41,8 +46,10 @@ services:
     restart: always
     ports:
       - 5432:5432
-    env_file:
-      - .env.database.development
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
     volumes:
       - todo-db-data:/var/lib/postgresql/data
 
